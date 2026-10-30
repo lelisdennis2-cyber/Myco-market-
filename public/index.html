@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Myco Market — edible mushrooms and growing kits.">
+  <title>Myco Market | Fresh & Natural</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="#"><span class="mark">✳</span> MYCO<span>MARKET</span></a>
+  <nav><a href="#shop">Shop</a><a href="#about">Our story</a><a href="#faq">FAQs</a></nav>
+  <div class="actions"><select id="countrySelect" aria-label="Country"></select><select id="currencySelect" aria-label="Currency"><option value="NGN">NGN ₦</option><option value="USD">USD $</option><option value="GBP">GBP £</option><option value="EUR">EUR €</option><option value="CAD">CAD $</option><option value="AUD">AUD $</option><option value="GHS">GHS ₵</option><option value="KES">KES KSh</option><option value="ZAR">ZAR R</option><option value="INR">INR ₹</option></select><button id="accountBtn" class="plain">Sign in</button><button id="cartBtn" class="cart">Cart <b id="cartCount">0</b></button></div>
+</header>
+<main>
+<section class="hero">
+  <div><p class="eyebrow">GROWN WITH CARE · DELIVERED FRESH</p><h1>Good things<br><em>grow naturally.</em></h1>
+  <p class="intro">A fresh space for carefully selected products. Our collection is coming soon.</p>
+  <a class="cta" href="#shop">Explore products <span>↗</span></a>
+  <p class="note">Your global marketplace. Products will appear here when added by the store owner.</p></div>
+  <div class="hero-visual"><div class="hero-mushroom-art" role="img" aria-label="Decorative mushroom illustration">🍄<span>MYCO MARKET</span></div><small>THE MYCO COLLECTION</small></div>
+</section>
+<section class="benefits"><div>✳ <b>Quality first</b><small>Selected with care</small></div><div>♧ <b>Grow at home</b><small>Beginner-friendly kits</small></div><div>⌁ <b>Easy ordering</b><small>Simple checkout</small></div></section>
+<section class="shop" id="shop"><div class="section-head"><div><p class="eyebrow">THE COLLECTION</p><h2>Shop the good stuff.</h2></div><p>Edible varieties and home-growing essentials.</p></div>
+  <div class="filters"><button class="active" data-filter="all">All products</button><button data-filter="fresh">Fresh mushrooms</button><button data-filter="kits">Growing kits</button><button data-filter="pantry">Pantry</button></div>
+  <div id="products" class="products"><div class="empty-catalog"><div>🍄</div><h3>Our collection is coming soon</h3><p>We are preparing our first products. Please check back soon.</p></div></div>
+</section>
+<section class="story" id="about"><div class="story-art">🍄</div><div><p class="eyebrow">OUR STORY</p><h2>Rooted in quality.<br><em>Made for everyday living.</em></h2><p>We make it easier to explore culinary mushrooms, discover new ingredients and try growing at home. Product details and preparation guidance are clearly provided.</p></div></section>
+<section class="faq" id="faq"><p class="eyebrow">NEED TO KNOW</p><h2>Frequently asked questions</h2>
+<details><summary>Are these products for eating?</summary><p>Products marked as fresh or pantry mushrooms are culinary food products. Follow the storage and preparation instructions supplied with your purchase.</p></details>
+<details><summary>How do I order?</summary><p>Add products to your cart, enter your contact and delivery details, and submit your order request.</p></details>
+<details><summary>How does account verification work?</summary><p>Register with your email address. We send a one-time verification code by email after the server has been configured with an email service.</p></details></section>
+</main>
+<footer><a class="brand" href="#"><span class="mark">✳</span> MYCO<span>MARKET</span></a><p>© <span id="year"></span> Myco Market. Culinary products only.</p></footer>
+
+<div class="overlay" id="cartPanel"><aside class="drawer"><div class="drawer-head"><div><p class="eyebrow">YOUR SELECTION</p><h2>Your cart</h2></div><button class="x" data-close="cartPanel">×</button></div><div id="cartLines" class="cart-lines"></div><div class="drawer-bottom"><div class="total"><span>Subtotal</span><b id="subtotal">₦0</b></div><button id="checkoutBtn" class="cta wide">Checkout <span>→</span></button><small>Delivery fee is confirmed separately.</small></div></aside></div>
+
+<div class="overlay" id="authPanel"><section class="modal"><button class="x top-x" data-close="authPanel">×</button><p class="eyebrow">YOUR MYCO ACCOUNT</p><h2 id="authHeading">Create account</h2><p class="muted">Create an account from any country. Verify your email address with a one-time code.</p>
+<form id="registerForm"><label>Full name<input id="fullName" required autocomplete="name"></label><label>Country<select id="regCountry" required></select></label><label>Phone number<input id="phone" type="tel" required placeholder="Include country code, e.g. +2348012345678" autocomplete="tel"></label><label>Email address<input id="email" type="email" required autocomplete="email"></label><label>Password<input id="password" type="password" minlength="8" required autocomplete="new-password"></label><button class="cta wide" type="submit">Send verification code <span>→</span></button></form>
+<form id="verifyForm" class="hidden"><label>6-digit email code<input id="otp" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required autocomplete="one-time-code"></label><button class="cta wide" type="submit">Verify email <span>→</span></button><button type="button" class="link-btn" id="resendOtp">Resend code</button></form>
+<form id="loginForm" class="hidden"><label>Email address<input id="loginEmail" type="email" required autocomplete="email"></label><label>Password<input id="loginPassword" type="password" required></label><button class="cta wide" type="submit">Sign in <span>→</span></button></form>
+<p class="form-foot" id="authFoot">Already have an account? <button id="showLogin" type="button" class="link-btn">Sign in</button></p><p class="status" id="authStatus" role="status"></p></section></div>
+
+<div class="overlay" id="checkoutPanel"><section class="modal"><button class="x top-x" data-close="checkoutPanel">×</button><p class="eyebrow">ORDER REQUEST</p><h2>Delivery details</h2><form id="orderForm"><label>Full name<input id="orderName" required></label><label>Country<select id="orderCountry" required></select></label><label>Phone number<input id="orderPhone" type="tel" required placeholder="Include country code"></label><label>Delivery address<textarea id="orderAddress" rows="3" required></textarea></label><label>Order note<textarea id="orderNote" rows="2"></textarea></label><button class="cta wide" type="submit">Place order request <span>→</span></button></form><p class="muted small">Sign in with a verified account before placing an order. The store owner will confirm availability and delivery fee.</p></section></div>
+<div id="toast" class="toast"></div>
+<script src="app.js"></script>
+</body></html>
