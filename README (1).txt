@@ -1,0 +1,1 @@
+Product images are uploaded privately through /admin.html after the server is deployed. No products are preloaded.
